@@ -1,0 +1,26 @@
+
+<a class="text-success" routerLink="/list"><span><i class="fas fa-arrow-alt-circle-left"></i> </span> Back to List</a>
+<h3> MR.<span class="text-success">{{ employees?.fullName }}</span> details and Gender is <span class="text-primary">{{ employees?.gender }}</span> Details </h3>
+<div class="table-responsive">
+  <table class="table table-bordered" *ngIf="employees">
+    <thead>
+      <tr class="bg-primary">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ employees.fullName }}</td>
+        <td>{{ employees.email }}</td>
+        <td>{{ employees.gender }}</td>         
+        <td> <button class="btn btn-secondary" (click)="Edit(employees.id)">Edit</button> </td>
+        <!-- <td> <button type="button" class="btn btn-danger" (click)="Delete(employee.id)">Delete</button> </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #other_content>No Records Found Here...</ng-template>

@@ -1,0 +1,29 @@
+.pointer{
+    cursor: pointer;
+}
+#hideMe {
+    color: red;
+    font-size: 25px;
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;       
+        overflow:hidden;
+    }
+}
+img {
+   width: 20px;
+  height: 13px;
+    margin-left: 10px;
+}

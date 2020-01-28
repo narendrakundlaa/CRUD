@@ -1,0 +1,28 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "fullName": "https://www.concretepage.com/angular-2/angular-2-4-route-guards-canactivate-and-canactivatechild-example",
+      "email": "",
+      "phone": null,
+      "gender": ""
+    },
+    {
+      "id": 3,
+      "fullName": "Narendra",
+      "email": "n@gmail.cvom",
+      "phone": null,
+      "gender": "Male"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

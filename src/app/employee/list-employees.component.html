@@ -1,0 +1,46 @@
+<input [(ngModel)]="searchText" placeholder="Search for anything...." class="advancedSearchTextbox">
+<!-- <select [(ngModel)]="searchText">
+  <option [value]="employee.gender" *ngFor="let employee of employees | grdFilter: {gender: searchText}">
+    {{ employee.gender | grdFilter  }}</option>
+</select> -->
+<div class="text-primari" id="hideMe" *ngIf="AlertMessageBoolean">{{AlertMessage}}</div>
+<div class="table-responsive">
+  <table class="table table-bordered" *ngIf="employees && employees.length; else other_content">
+    <thead>
+      <tr class="bg-primary">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender </th>
+        <th colspan="3">Action</th>
+        <!-- <i class="fas fa-sort"></i></span> -->
+      </tr>
+    </thead>
+    <tbody>
+      <div *ngIf="!searchText">No data</div>
+      <tr class="pointer"
+        *ngFor="let employee of employees | grdFilter: {id: searchText,fullName: searchText, email:searchText,  gender: searchText}">
+        
+        <td>{{ employee.fullName | titlecase}}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.gender | titlecase }}</td>
+        <td>
+          <button class="btn btn-success" (click)="viewEmployee(employee.id, employee.gender)">View</button>
+        </td>
+        <td>
+          <button class="btn btn-secondary" (click)="Edit(employee.id, employee.gender)">
+           Edit
+          </button>
+        </td>
+
+        <td>
+          <button type="button" class="btn btn-danger" (click)="Delete(employee.id, employee.fullName)">
+           Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<ng-template #other_content>No Records Found Here...</ng-template>

@@ -1,0 +1,4 @@
+.navbar-inverse .navbar-nav>li>a.active {
+    color: white;
+    font-size: 20px;
+}
